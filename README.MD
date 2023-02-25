@@ -1,6 +1,6 @@
 # Search Info System - SIS
 
-Front-end project to consume the REST API called SISYS.
+Front-end project to consume the REST API sisys_api.
 
 ## Resources used to develop this project:
 - HTML5
