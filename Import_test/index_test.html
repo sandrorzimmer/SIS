@@ -1,0 +1,126 @@
+<!doctype html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SISYS</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <script src="script_test.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="container-fluid fixed-top bg-light p-3" id="search">
+                <div class="input-group" id="search__basic">
+                    <button type="button" class="btn btn-link me-3 text-decoration-none" id="search__btn_home">Sisys</button>
+                    <input type="text" class="form-control rounded-start" placeholder="Type your search here" id="search__basic__keyword" autofocus>
+                    <button class="btn btn-outline-success rounded-end" type="button" id="search__basic__btn_search">Search</button>
+                    <button type="button" class="btn link-secondary text-decoration-none rounded" data-bs-toggle="collapse" data-bs-target="#search__advanced">Advanced</button>
+                    <button type="button" class="btn link-secondary text-decoration-none rounded" id="search__logout">Logout</button>
+                </div>
+
+                <div class="container mt-2 collapse position-relative" id="search__advanced">
+                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar">
+                        <div class="btn-group me-2 btn-group-sm" role="group" id="search__advanced__tags">
+
+                        </div>
+
+                        <div class="btn-group btn-group-sm bottom-0 end-0" role="group">
+                            <button class="btn btn-primary mx-2 rounded" type="button" id="search__basic__btn_edit_tags">Edit Tags</button>
+                        </div>
+
+                        <div class="btn-group btn-group-sm bottom-0 end-0" role="group">
+                            <button class="btn btn-primary mx-2 rounded" type="button" id="search__basic__btn_new_info">New Info</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container" id="container_alert">
+            </div>
+
+            <div class="container-fluid p-3 bg-light bg-opacity-100 border border-light rounded position-absolute text-center start-50 translate-middle" id="form_login">
+                <h1 class="text-center p-3">Search Info System</h1>
+                <form>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" id="form_login__email" placeholder="Email">
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" id="form_login__password" placeholder="Password">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="form_login__btn_login">Log in</button>
+                </form>
+            </div>
+            <div class="container-fluid text-center" id="login_alert">
+                <div class="alert alert-danger" role="alert">
+                    <strong>Login failed.<br>Please check your email and password.</strong>
+                </div>
+            </div>
+
+            <div class="Container" id="content">
+                <div class="container-fluid m-3" id="content__info_cards">
+                </div>
+
+                <div class="container-fluid p-3 m-3 bg-light bg-opacity-50 border border-light rounded" id="content__new_info">
+                    <div class="mb-3">
+                        <h5>New Info</h5>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="content__new_info__title" placeholder="Title">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="content__new_info__text" rows="10"></textarea>
+                    </div>
+                    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar">
+                        <div class="btn-group me-2 btn-group-sm" role="group" id="content__new_info__tags">
+                        </div>                        
+                    </div>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-success mx-2 rounded" id="btn_import">Import</button>
+                    </div>                                            
+                </div>
+
+                <div class="container-fluid p-3 m-3 bg-light bg-opacity-50 border border-light rounded" id="content__edit_info">
+                    <div class="mb-3">
+                        <h5>Edit Info</h5>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="content__edit_info__title" data-info_id="">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="content__edit_info__text" rows="10"></textarea>
+                    </div>
+                    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar">
+                        <div class="btn-group me-2 btn-group-sm" role="group" id="content__edit_info__tags">
+                        </div>                        
+                    </div>                    
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-success mx-2 rounded" id="content__edit_info__btn_save">Save</button>
+                        <button type="button" class="btn btn-warning mx-2 rounded" id="content__edit_info__btn_cancel">Cancel</button>
+                        <button type="button" class="btn btn-danger mx-2 rounded" id="content__edit_info__btn_delete">Delete Info</button>
+                    </div>                                            
+                </div>
+
+                <div class="container-fluid p-3 m-3 bg-light bg-opacity-50 border border-light rounded" id="content__edit_tags">
+                    <div class="mb-3">
+                        <h5>Edit Tags</h5>
+                    </div>
+                    <div class="input-group mb-3 content__edit_tags__item" id="content__edit_tags__container_new_tag">
+                        <input type="text" class="form-control" id="content__edit_tags__input_new_tag" placeholder="Create new tag">
+                        <button class="btn btn-outline-success" type="button" id="content__edit_tags__btn_save_new_tag">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid fixed-bottom text-center text-bg-light" id="container_footer">
+            <div class="text" id="container_footer__footer">
+                &#169 Sandro Zimmer - 2023
+            </div>
+        </div>
+    </body>
+</html>
