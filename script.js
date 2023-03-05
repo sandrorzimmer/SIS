@@ -235,16 +235,18 @@ function mountTagsMenu() {
         item.remove();
     })
 
-    // Check user login
-    if(!checkLogin()) {
-        goLogin();
-        return
-    } else {
-        user_token = getLocalToken();
-        search__user.innerHTML = localStorage.getItem('sisys_user');
-        let username = (localStorage.getItem('sisys_user')).split('@');
-        search__user.innerHTML = username [0];
-    }
+    // // Check user login
+    // if(!checkLogin()) {
+    //     goLogin();
+    //     return
+    // } else {
+    //     user_token = getLocalToken();
+    //     search__user.innerHTML = localStorage.getItem('sisys_user');
+    //     let username = (localStorage.getItem('sisys_user')).split('@');
+    //     search__user.innerHTML = username [0];
+    // }
+
+    goHome();
 
     const userTags = fetch(basic_api_url + '/tag', {
         headers: {
