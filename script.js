@@ -247,6 +247,7 @@ function mountTagsMenu() {
     // }
 
     goHome();
+    //search.style.display = "block";
 
     const userTags = fetch(basic_api_url + '/tag', {
         headers: {
